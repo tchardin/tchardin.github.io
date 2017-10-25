@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import faceIcon from './face.svg'
 import Face from './components/Face'
+import Detame from './Detame'
 
 class App extends Component {
   constructor(props) {
@@ -62,30 +63,16 @@ class App extends Component {
         </section>
         <div className="container is-widescreen space-around">
         <div className="tile is-ancestor">
-          <div className="tile is-parent">
-            <article className="tile is-child box">
-              <p className="title is-uppercase yellowLine">Detame</p>
-              <p className="subtitle">How might we help web users keep track of their digital identities?</p>
-              <div className="content">
-                <p>Detame is a browser extensions that tracks data recorded during site visits to reconstruct decentralized identities.</p>
-                <p>This is part of a research work on portable reputation and decentralized identity.</p>
-                <p>More to come on this...</p>
-              </div>
-              <div className="tags">
-                <span className="tag is-danger">Decentralized Identity</span>
-                <span className="tag is-danger">Web</span>
-              </div>
-            </article>
-          </div>
+          <Detame />
           <div className="tile is-parent">
             <article className="tile is-child box">
               <figure className="image">
                 <img src="https://s3-us-west-2.amazonaws.com/mypf/images/ezgif.com-resize.gif" />
               </figure>
               <p className="title is-uppercase blueLine">Credo</p>
-              <p className="subtitle">How might we create a decentralized credit score?</p>
+              <p className="subtitle">How might we enable credit thin/invisible individuals to bootstrap financial reputation?</p>
               <div className="content">
-                <p>Credo is a decentralized data verification platform. Credit invisible individuals self report their data leveraging cryptography to prove authenticity and bootstrap a new decentralized and portable reputation.</p>
+                <p>Credo is a decentralized data verification platform. Credit invisible users self report their data leveraging cryptography to prove authenticity and bootstrap a new decentralized and portable reputation.</p>
                 <p>This app was built throughout the summer for IDEO Colab.</p>
               </div>
               <div className="tags">
@@ -98,22 +85,12 @@ class App extends Component {
         </div>
           <div className="tile is-ancestor">
             <div className="tile is-vertical is-8">
-              <div className="tile is-parent">
-                <article className="tile is-child box">
-                  <figure className="image">
-                    <img src="https://s3-us-west-2.amazonaws.com/mypf/images/recoin.png" />
-                  </figure>
-                  <p className="title is-uppercase blueLine">RECoin</p>
-                  <p className="subtitle">How might we incentivize adoption of electric vehicles?</p>
-                  <div className="content">
-                    <p>For this sprint at IDEO Colab we prototyped what it would be like to mine a token built on Ethereum when driving electric vehicles as a way to incentivize adoption.</p>
-                  </div>
-                  <span className="tag is-danger">Blockchain</span>
-                </article>
-              </div>
               <div className="tile">
                 <div className="tile is-parent is-vertical">
                   <article className="tile is-child box">
+                    <figure className="image">
+                      <img src="https://s3-us-west-2.amazonaws.com/mypf/images/c311po-cover1.jpg" />
+                    </figure>
                     <p className="title is-uppercase blueLine">C311po</p>
                     <p className="subtitle">How might we recognize changes in public sentiment to optimize city administration?</p>
                     <div className="content">
@@ -138,7 +115,18 @@ class App extends Component {
                     </div>
                   </article>
                 </div>
-                <div className="tile is-parent">
+                <div className="tile is-parent is-vertical">
+                  <article className="tile is-child box">
+                    <figure className="image">
+                      <img src="https://s3-us-west-2.amazonaws.com/mypf/images/recoin.png" />
+                    </figure>
+                    <p className="title is-uppercase blueLine">RECoin</p>
+                    <p className="subtitle">How might we incentivize adoption of electric vehicles?</p>
+                    <div className="content">
+                      <p>For this sprint at IDEO Colab we prototyped what it would be like to mine a token built on Ethereum through driving electric vehicles as a way to incentivize adoption.</p>
+                    </div>
+                    <span className="tag is-danger">Blockchain</span>
+                  </article>
                   <article className="tile is-child box">
                     <figure className="image is-4by3">
                       <img src="https://s3-us-west-2.amazonaws.com/mypf/images/kaitt-2.gif" />
@@ -146,7 +134,7 @@ class App extends Component {
                     <p className="title is-uppercase blueLine">KAITT</p>
                     <p className="subtitle">How might we redesign priority in a system of autonomous vehicles?</p>
                     <div className="content">
-                      <p>KAITT is a voice controlled virtual assistant designed to handle emergencies in autonomous vehicles systems. It is able to detect, assess and rank the level of emergency of a given situation and gain priority on the road to drive passengers as fast as possible to their destination.</p>
+                      <p>KAITT is a voice controlled virtual assistant designed to handle emergencies in autonomous vehicles systems. It is able to detect, assess and rank the level of emergency of a given situation and obtain priority on the road to drive passengers as fast as possible to their destination.</p>
                     </div>
                     <div className="tags">
                       <span className="tag is-danger">Machine Learning</span>
@@ -165,8 +153,9 @@ class App extends Component {
                   <p className="title is-uppercase blueLine">Squid</p>
                   <p className="subtitle">How might we design a seamless concert ticketing experience?</p>
                   <div className="content">
-                    <p>This project developed over a 5 months period with financial support from an angel investor and Berklee ICE. When the Facebook Messenger platform opened and after frustrating personal experiences with ticket purchases, we saw the opportunity of simplifying ticket discovery and purchase via a chat interface. In fact, current ticketing platforms such as Ticketmaster or Axs are slow and complicated without great mobile first experiences forcing third party apps such as Songkick and Bandsintown to appear. A seamless experience would require a complete redesign.</p>
-                    <p>We leveraged Messenger platform functionalities such as location, quick replies, template cards and integrated payment system to create a fluid experience. We first build a small script to identify the users’ favorite artists playing in their geographic area. We also implemented an integrated ticket query via Ticketmaster followed by the option to finish the purchase. As our friends started using it we gradually added features such as concert recommendations based on influent music publications and search of similar artists etc.</p>
+                    <p>This project developed over a 5 months period with financial support from an angel investor and Berklee ICE. When the Facebook Messenger platform opened and after frustrating personal experiences with ticket purchases, we saw the opportunity of simplifying ticket discovery and purchase via a chat interface.</p>
+                    <p>The app leverages Messenger platform functionalities such as location, quick replies, template cards and integrated payment system to create a fluid experience. With a small script it identifies the users’ favorite artists playing in their geographic area.</p>
+                    <p>This showed the caveats of depending on 3rd parties platforms and pushed me to explore decentralized architectures.</p>
                   </div>
                 </div>
                 <div className="tags">
