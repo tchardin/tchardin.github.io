@@ -89,16 +89,18 @@ class DetameComponent extends Component {
   }
   render() {
     return (
-      <div className="tile is-parent is-6">
+      <div className="tile is-parent">
+        <article className="tile is-child box">
+          <div className="canvas-container image" ref={(div) => {this.container = div}}></div>
+        </article>
         <article className="tile is-child box"
           ref={a => this.article = a}>
-          <div className="canvas-container image" ref={(div) => {this.container = div}}></div>
           <p className="title is-uppercase yellowLine">Detame</p>
           <p className="subtitle">How might we help web users keep track of their digital identities?</p>
           <div className="content">
             <p>Detame is a browser extensions that tracks data recorded during site visits to give users a better understanding of their privacy and digital identities.</p>
-            <p>After working decentralized credit scoring system at IDEO Colab I am continuing the research and exploring other potential products.</p>
-            <p>More on that soon.</p>
+            <p>This is a side project I started after working on a decentralized credit scoring system at IDEO Colab.</p>
+            <p>Come back sometime to try it out.</p>
           </div>
           <div className="tags">
             <span className="tag is-danger">Decentralized Identity</span>

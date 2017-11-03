@@ -64,6 +64,41 @@ class App extends Component {
         <div className="container is-widescreen space-around">
         <div className="tile is-ancestor">
           <Detame />
+        </div>
+        <div className="tile is-ancestor">
+          <div className="tile is-parent">
+            <article className="tile is-child box">
+              <figure className="image is-16by9">
+                <img src="https://s3-us-west-2.amazonaws.com/mypf/images/vinyl.png" />
+              </figure>
+              <p className="title is-uppercase yellowLine">Vinyl Dreams</p>
+              <p className="subtitle">How might we enable non musicians to create and share their own music?</p>
+              <div className="content">
+                <p>Vinyl Dreams is a mobile app for music creation.</p>
+              </div>
+              <div className="tags">
+                <span className="tag is-danger">UI/UX</span>
+                <span className="tag is-danger">iOS</span>
+              </div>
+            </article>
+          </div>
+          <div className="tile is-parent">
+            <article className="tile is-child box">
+              <figure className="image is-16by9">
+                <img src="https://s3-us-west-2.amazonaws.com/mypf/images/proem.png" />
+              </figure>
+              <p className="title is-uppercase yellowLine">Proem</p>
+              <p className="subtitle">How might we design a secure and decentralized cryptocurrency portfolio manager?</p>
+              <div className="content">
+                <p>Proem is a decentralized portfolio management platform built on Blockstack. It enables users to visualize their assets with metrics from multiple markets and blockchains with data encrypted on their own controlled storage.</p>
+              </div>
+              <div className="tags">
+                <span className="tag is-danger">Web</span>
+                <span className="tag is-danger">React</span>
+                <span className="tag is-danger">Blockchain</span>
+              </div>
+            </article>
+          </div>
           <div className="tile is-parent">
             <article className="tile is-child box">
               <figure className="image">
@@ -79,6 +114,7 @@ class App extends Component {
                 <span className="tag is-danger">Decentralized Identity</span>
                 <span className="tag is-danger">Cryptography</span>
                 <span className="tag is-danger">iOS</span>
+                <span className="tag is-danger">React Native</span>
               </div>
             </article>
           </div>
@@ -99,6 +135,7 @@ class App extends Component {
                     <div className="tags">
                       <span className="tag is-danger">Machine Learning</span>
                       <span className="tag is-danger">Chat Bot</span>
+                      <span className="tag is-danger">Node JS</span>
                     </div>
                   </article>
                   <article className="tile is-child box">
@@ -112,6 +149,7 @@ class App extends Component {
                     </div>
                     <div className="tags">
                       <span className="tag is-danger">Chat Bot</span>
+                      <span className="tag is-danger">Node JS</span>
                     </div>
                   </article>
                 </div>
@@ -125,7 +163,10 @@ class App extends Component {
                     <div className="content">
                       <p>For this sprint at IDEO Colab we prototyped what it would be like to mine a token built on Ethereum through driving electric vehicles as a way to incentivize adoption.</p>
                     </div>
-                    <span className="tag is-danger">Blockchain</span>
+                    <div className="tags">
+                      <span className="tag is-danger">Blockchain</span>
+                      <span className="tag is-danger">Vue JS</span>
+                    </div>
                   </article>
                   <article className="tile is-child box">
                     <figure className="image is-4by3">
@@ -139,6 +180,8 @@ class App extends Component {
                     <div className="tags">
                       <span className="tag is-danger">Machine Learning</span>
                       <span className="tag is-danger">Chat Bot</span>
+                      <span className="tag is-danger">Node JS</span>
+                      <span className="tag is-danger">Processing</span>
                     </div>
                   </article>
                 </div>
@@ -161,6 +204,7 @@ class App extends Component {
                 <div className="tags">
                   <span className="tag is-danger">Chat Bot</span>
                   <span className="tag is-danger">Web App</span>
+                  <span className="tag is-danger">Node JS</span>
                 </div>
               </article>
             </div>
@@ -192,6 +236,7 @@ class App extends Component {
                 <div className="content">
                   <p>The Open Music Initiative is an academic and open source project to help musicians get compensated more fairly by increasing interoperability between all the parties of the music industry.  I am contributor of the Identity, Security & Audit Services group.</p>
                 </div>
+                <span className="tag is-danger">Blockchain</span>
               </article>
             </div>
             <div className="tile is-parent">
@@ -207,6 +252,7 @@ class App extends Component {
                 <div className="tags">
                   <span className="tag is-danger">Biometrics</span>
                   <span className="tag is-danger">Data Visualization</span>
+                  <span className="tag is-danger">Processing</span>
                 </div>
               </article>
             </div>
