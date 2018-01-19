@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import faceIcon from './face.svg'
 import Face from './components/Face'
 import Detame from './Detame'
 
@@ -9,49 +8,48 @@ class App extends Component {
     this.state = {
       menu: false
     }
-    this.handleMenuClick = this.handleMenuClick.bind(this)
   }
-  handleMenuClick() {
-    this.setState(prevState => {
+  _toggleMenu() {
+    this.setState(prevState => ({
       menu: !prevState.menu
-    })
+    }))
   }
   render() {
     return (
       <div className="App">
-        <section className="hero is-fullheight">
-          <div className="hero-head">
-            <nav className="navbar">
-              <div className="container">
-                <div className="navbar-brand">
-                  <a className="navbar-item">
-                    <img className="image is-16x16" src="https://s3-us-west-2.amazonaws.com/mypf/images/tc_icon.png" />
-                  </a>
-                  <span className="navbar-burger burger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </span>
-                </div>
-                <div className="navbar-menu">
-                  <div className="navbar-end">
-                    <a className="navbar-item has-text-weight-bold"
-                      href="https://www.linkedin.com/in/tchardin" target="_blank">
-                      LinkedIn
-                    </a>
-                    <a className="navbar-item has-text-weight-bold"
-                      href="https://github.com/tchardin" target="_blank">
-                      Github
-                    </a>
-                    <a className="navbar-item has-text-weight-bold"
-                      href="mailto:tdotchardin@gmail.com">
-                      Email
-                    </a>
-                  </div>
-                </div>
+        <nav className="navbar is-white is-fixed-top">
+          <div className="container">
+            <div className="navbar-brand">
+              <a className="navbar-item">
+                <img className="image is-16x16" src="https://s3-us-west-2.amazonaws.com/mypf/images/tc_icon.png" />
+              </a>
+              <span
+                className={this.state.menu ? "navbar-burger burger is-active" : "navbar-burger burger"}
+                onClick={() => this._toggleMenu()}>
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </div>
+            <div className={this.state.menu ? "navbar-menu is-active" : "navbar-menu"}>
+              <div className="navbar-end">
+                <a className="navbar-item has-text-weight-bold"
+                  href="https://www.linkedin.com/in/tchardin" target="_blank">
+                  LinkedIn
+                </a>
+                <a className="navbar-item has-text-weight-bold"
+                  href="https://github.com/tchardin" target="_blank">
+                  Github
+                </a>
+                <a className="navbar-item has-text-weight-bold"
+                  href="mailto:tdotchardin@gmail.com">
+                  Email
+                </a>
               </div>
-            </nav>
+            </div>
           </div>
+        </nav>
+        <section className="hero is-fullheight">
           <div className="hero-body">
             <div className="container has-text-centered">
               <Face />
@@ -75,6 +73,7 @@ class App extends Component {
               <p className="subtitle">How might we enable non musicians to create and share their own music?</p>
               <div className="content">
                 <p>Vinyl Dreams is a mobile app for music creation.</p>
+                <p>My contribution for this project is solely on the graphics and UX front.</p>
               </div>
               <div className="tags">
                 <span className="tag is-danger">UI/UX</span>
@@ -91,11 +90,12 @@ class App extends Component {
               <p className="subtitle">How might we design a secure and decentralized cryptocurrency portfolio manager?</p>
               <div className="content">
                 <p>Proem is a decentralized portfolio management platform built on Blockstack. It enables users to visualize their assets with metrics from multiple markets and blockchains with data encrypted on their own controlled storage.</p>
+                <p>I am currently working on developing trading algorithms and a mobile app to monitor them.</p>
               </div>
               <div className="tags">
                 <span className="tag is-danger">Web</span>
                 <span className="tag is-danger">React</span>
-                <span className="tag is-danger">Blockchain</span>
+                <span className="tag is-danger">Crypto</span>
               </div>
             </article>
           </div>
@@ -258,12 +258,28 @@ class App extends Component {
             </div>
           </div>
         </div>
+        <hr />
+        <nav className="level is-mobile">
+          <div className="level-item has-text-centered">
+            <div>
+              <p className="heading">In progress</p>
+              <p className="title">4</p>
+            </div>
+          </div>
+          <div className="level-item has-text-centered">
+            <div>
+              <p className="heading">Past</p>
+              <p className="title">8</p>
+            </div>
+          </div>
+        </nav>
         <footer className="footer">
           <div className="container">
             <div className="content has-text-centered is-size-7">
               <p>
               All the work presented is my own in colaboration with team members. Please contact me for any questions!
               </p>
+              <p>My role for each project is software developer unless noted otherwise.</p>
               <p>
               2017 - <strong>Thomas Chardin</strong>
               </p>

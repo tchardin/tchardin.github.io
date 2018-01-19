@@ -6191,6 +6191,37 @@ a.dropdown-item.is-active {
   position: relative;
 }
 
+.navbar.is-fixed-bottom, .navbar.is-fixed-top {
+  left: 0;
+  position: fixed;
+  right: 0;
+  z-index: 30;
+}
+
+.navbar.is-fixed-top {
+  top: 0;
+}
+.navbar.is-fixed-top-touch {
+    top: 0;
+  }
+
+.navbar.is-fixed-top .navbar-menu, .navbar.is-fixed-top-touch .navbar-menu {
+   -webkit-overflow-scrolling: touch;
+   max-height: calc(100vh - 3.25rem);
+   overflow: auto;
+ }
+
+ .navbar.is-fixed-bottom-desktop, .navbar.is-fixed-top-desktop {
+    left: 0;
+    position: fixed;
+    right: 0;
+    z-index: 30;
+  }
+
+  .navbar.is-fixed-top-desktop {
+  top: 0;
+}
+
 .navbar.is-white {
   background-color: white;
   color: #0a0a0a;

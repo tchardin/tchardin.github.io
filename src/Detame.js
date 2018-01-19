@@ -23,7 +23,7 @@ var camera = new PerspectiveCamera(75, WIDTH/HEIGHT, 1 , 3000)
 var scene = new Scene()
 var geometry = new Geometry()
 var color, size, particles, materials = []
-var mouseX = 0, mouseY = 0
+var mouseX = 0, mouseY = 0, scWidth = window.innerWidth
 
 class DetameComponent extends Component {
   constructor(props) {
@@ -79,7 +79,8 @@ class DetameComponent extends Component {
       scene.add(particles)
     }
     renderer.setPixelRatio(window.devicePixelRatio)
-    renderer.setSize(WIDTH, HEIGHT)
+    const frameWidth = scWidth < WIDTH ? scWidth-40 : WIDTH
+    renderer.setSize(frameWidth, HEIGHT)
     this.container.appendChild(renderer.domElement)
     document.addEventListener('mousemove', this.onMouseMove, false)
     this.animate()
