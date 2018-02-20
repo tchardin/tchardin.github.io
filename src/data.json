@@ -1,0 +1,24 @@
+{
+  "projects": [
+    {
+      "key": "23udh9",
+      "title": "Detame",
+      "problem": "How might we help web users keep track of their digital identities?",
+      "image": "",
+      "description": [
+        {
+          "id": "30d2i39",
+          "text": "Detame is a browser extensions that tracks data recorded during site visits to give users a better understanding of their privacy and digital identities."
+        },
+        {
+          "id": "3d30j9j2",
+          "text": "This is a side project I started after working on a decentralized credit scoring system at IDEO Colab.",
+        },
+        {
+          "id": "3hdi200",
+          "text": "Come back sometime to try it out"
+        }
+      ]
+    }
+  ]
+}

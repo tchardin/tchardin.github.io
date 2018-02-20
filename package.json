@@ -6,9 +6,9 @@
     "animejs": "^2.2.0",
     "bulma": "^0.6.0",
     "gh-pages": "^1.0.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-scripts": "1.0.14",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.1",
     "three": "^0.87.1"
   },
   "scripts": {

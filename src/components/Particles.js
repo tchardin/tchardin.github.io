@@ -9,8 +9,8 @@ import {
   Points,
   WebGLRenderer
 } from 'three'
-const HEIGHT = 295
-const WIDTH = 525
+const HEIGHT = window.innerHeight
+const WIDTH = window.innerWidth
 const parameters = [
   [ [1, 1, 0.5], 5 ],
   [ [0.95, 1, 0.5], 4 ],
@@ -25,9 +25,10 @@ var geometry = new Geometry()
 var color, size, particles, materials = []
 var mouseX = 0, mouseY = 0, scWidth = window.innerWidth
 
-class DetameComponent extends Component {
+class ParticlesComponent extends Component {
   constructor(props) {
     super(props)
+    this.renderScene = this.renderScene.bind(this)
     this.renderAnimation = this.renderAnimation.bind(this)
     this.animate = this.animate.bind(this)
     this.onMouseMove = this.onMouseMove.bind(this)
@@ -58,10 +59,10 @@ class DetameComponent extends Component {
     requestAnimationFrame(this.animate)
     this.renderAnimation()
   }
-  componentDidMount() {
+  renderScene() {
     camera.position.z = 1000
     scene.fog = new FogExp2( 0x000000, 0.0007)
-    for (let i = 0; i < 20000; i++) {
+    for (let i = 0; i < 1000; i++) {
       let vertex = new Vector3()
       vertex.x = Math.random()*2000-1000
       vertex.y = Math.random()*2000-1000
@@ -79,38 +80,21 @@ class DetameComponent extends Component {
       scene.add(particles)
     }
     renderer.setPixelRatio(window.devicePixelRatio)
-    const frameWidth = scWidth < WIDTH ? scWidth-40 : WIDTH
-    renderer.setSize(frameWidth, HEIGHT)
+    //const frameWidth = scWidth < WIDTH ? scWidth-40 : WIDTH
+    renderer.setSize(WIDTH, HEIGHT)
     this.container.appendChild(renderer.domElement)
     document.addEventListener('mousemove', this.onMouseMove, false)
     this.animate()
+  }
+  componentDidMount() {
+    this.renderScene()
   }
   componentWillUnmount() {
     document.removeEventListener('mousemove', this.onMouseMove)
   }
   render() {
-    return (
-      <div className="tile is-parent">
-        <article className="tile is-child box">
-          <div className="canvas-container image" ref={(div) => {this.container = div}}></div>
-        </article>
-        <article className="tile is-child box"
-          ref={a => this.article = a}>
-          <p className="title is-uppercase yellowLine">Detame</p>
-          <p className="subtitle">How might we help web users keep track of their digital identities?</p>
-          <div className="content">
-            <p>Detame is a browser extensions that tracks data recorded during site visits to give users a better understanding of their privacy and digital identities.</p>
-            <p>This is a side project I started after working on a decentralized credit scoring system at IDEO Colab.</p>
-            <p>Come back sometime to try it out.</p>
-          </div>
-          <div className="tags">
-            <span className="tag is-danger">Decentralized Identity</span>
-            <span className="tag is-danger">Web</span>
-          </div>
-        </article>
-      </div>
-    )
+    return <div className="canvas-container" ref={(div) => {this.container = div}} />
   }
 }
 
-export default DetameComponent
+export default ParticlesComponent

@@ -94,6 +94,7 @@ body {
   min-height: 100%;
   width: 100%;
   font-size: 16px;
+  overflow: hidden;
 }
 a, a:link, a:visited, a:focus, a:hover, a:active {
   text-decoration: none;

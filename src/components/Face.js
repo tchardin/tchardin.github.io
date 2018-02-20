@@ -15,7 +15,7 @@ class Face extends Component {
   }
   render() {
     return (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 379.86 501.7" height="148px" width="148px">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 379.86 501.7" height="248px" width="248px">
         <g id="hair">
           <path className="cls-1"
             ref={path => this.hairPath = path}
