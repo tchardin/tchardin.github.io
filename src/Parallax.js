@@ -11,7 +11,8 @@ import {
   GroupTwo,
   GroupThree,
   GroupFour,
-  GroupFive
+  GroupFive,
+  GroupSix
 } from './components/Content'
 
 class Parallax extends PureComponent {
@@ -23,12 +24,7 @@ class Parallax extends PureComponent {
         <GroupThree />
         <GroupFour />
         <GroupFive />
-        <div className="parallax__group group_6">
-          <div className="parallax__layer parallax__layer--back is-black">
-          </div>
-          <div className="parallax__layer parallax__layer--base">
-          </div>
-        </div>
+        <GroupSix />
       </div>
     )
   }

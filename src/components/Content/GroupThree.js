@@ -15,7 +15,7 @@ const GroupThree = () => {
           position="is-top"
           name="recoin"
           hmw="How might we incentivize adoption of electric vehicles?"
-          description="For this sprint at IDEO Colab we prototyped what it would be like to mine a token built on Ethereum through driving electric vehicles as a way to incentivize adoption."
+          description="For this sprint at IDEO Colab we prototyped what it would be like to mine an Ethereum token through driving electric vehicles as a way to incentivize adoption."
           image="https://s3-us-west-2.amazonaws.com/mypf/images/recoin.png"/>
        <ProjectCard
           position="is-bottom"
@@ -36,7 +36,7 @@ const GroupThree = () => {
             <mark>Venture Design</mark>
           </h1>
           <p className="content-subtitle">
-            <mark>Exploring emerging technologies at IDEO COLAB.</mark>
+            <mark>Exploring emerging technologies at <strong>IDEO COLAB.</strong></mark>
           </p>
         </div>
       </main>
