@@ -12,8 +12,8 @@ const Navbar = () => {
       </div>
       <div className="navbar-right">
         <a className="navbar-item is-first"
-          href="https://www.linkedin.com/in/tchardin" target="_blank">
-          LinkedIn
+          href="https://s3-us-west-2.amazonaws.com/mypf/tchardin_cv.pdf" target="_blank">
+          CV
         </a>
         <a className="navbar-item is-middle"
           href="https://github.com/tchardin" target="_blank">

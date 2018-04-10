@@ -1,4 +1,5 @@
-import React, {Component} from 'react'
+import React from 'react'
+import styled from 'styled-components'
 import {
   PerspectiveCamera,
   Scene,
@@ -9,7 +10,16 @@ import {
   Points,
   WebGLRenderer
 } from 'three'
-const HEIGHT = window.innerHeight
+
+const Container = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+`
+const HEIGHT = window.innerHeight*1.2
 const WIDTH = window.innerWidth
 const parameters = [
   [ [1, 1, 0.5], 5 ],
@@ -18,26 +28,21 @@ const parameters = [
   [ [0.85, 1, 0.5], 2 ],
   [ [0.80, 1, 0.5], 1 ]
 ]
-var renderer = new WebGLRenderer()
-var camera = new PerspectiveCamera(75, WIDTH/HEIGHT, 1 , 3000)
-var scene = new Scene()
-var geometry = new Geometry()
-var color, size, particles, materials = []
-var mouseX = 0, mouseY = 0, scWidth = window.innerWidth
+let renderer = new WebGLRenderer()
+let camera = new PerspectiveCamera(75, WIDTH/HEIGHT, 1 , 3000)
+let scene = new Scene()
+let geometry = new Geometry()
+let color, size, particles, materials = []
+let mouseX = 0, mouseY = 0, scWidth = window.innerWidth
+let windowHalfX = WIDTH/2
+let windowHalfY = HEIGHT/2
 
-class ParticlesComponent extends Component {
-  constructor(props) {
-    super(props)
-    this.renderScene = this.renderScene.bind(this)
-    this.renderAnimation = this.renderAnimation.bind(this)
-    this.animate = this.animate.bind(this)
-    this.onMouseMove = this.onMouseMove.bind(this)
+class ParticlesComponent extends React.Component {
+  onMouseMove = e => {
+      mouseX = e.clientX - windowHalfX,
+      mouseY = e.clientY - windowHalfY
   }
-  onMouseMove(e) {
-      mouseX = e.clientX - WIDTH/2,
-      mouseY = e.clientY - HEIGHT/2
-  }
-  renderAnimation() {
+  renderAnimation = () => {
     let time = Date.now()*0.00005
     camera.position.x += (mouseX - camera.position.x)*0.05
     camera.position.y += (- mouseY - camera.position.y)*0.05
@@ -55,11 +60,11 @@ class ParticlesComponent extends Component {
     }
     renderer.render(scene, camera)
   }
-  animate() {
+  animate = () => {
     requestAnimationFrame(this.animate)
     this.renderAnimation()
   }
-  renderScene() {
+  renderScene = () => {
     camera.position.z = 1000
     scene.fog = new FogExp2( 0x000000, 0.0007)
     for (let i = 0; i < 1000; i++) {
@@ -86,14 +91,23 @@ class ParticlesComponent extends Component {
     document.addEventListener('mousemove', this.onMouseMove, false)
     this.animate()
   }
+  onWindowResize = () => {
+    windowHalfX = window.innerWidth / 2
+    windowHalfY = (window.innerHeight*1.2) / 2
+    camera.aspect = window.innerWidth / (window.innerHeight*1.2)
+    camera.updateProjectionMatrix()
+    renderer.setSize( window.innerWidth, (window.innerHeight*1.2))
+  }
   componentDidMount() {
     this.renderScene()
+    window.addEventListener('resize', this.onWindowResize, false)
   }
   componentWillUnmount() {
     document.removeEventListener('mousemove', this.onMouseMove)
+    window.removeEventListener('resize', this.onWindowResize)
   }
   render() {
-    return <div className="canvas-container" ref={(div) => {this.container = div}} />
+    return <Container innerRef={(div) => {this.container = div}} />
   }
 }
 

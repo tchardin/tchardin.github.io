@@ -67,6 +67,7 @@ ol,
 ul,
 li,
 fieldset,
+figure,
 form,
 label,
 legend,
@@ -94,7 +95,8 @@ body {
   min-height: 100%;
   width: 100%;
   font-size: 16px;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 a, a:link, a:visited, a:focus, a:hover, a:active {
   text-decoration: none;
@@ -144,4 +146,8 @@ q {
 
 .canvas-container {
   line-height: 0;
+}
+
+mark {
+  background-color: #fff;
 }

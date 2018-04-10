@@ -1,10 +1,9 @@
 .parallax {
   perspective: 300px;
-  perspective-origin-x: 100%;
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
-  font-size: 200%;
+  background-color: #000;
 }
 
 .parallax__group {
@@ -64,7 +63,7 @@
 
 .parallax__layer--fore {
   transform: translateZ(90px) scale(.7);
-  z-index: 1;
+  z-index: 3;
 }
 
 .parallax__layer--deep {
@@ -75,6 +74,22 @@
 .parallax__layer--high {
   transform: translateZ(180px) scale(.4);
   z-index: 0;
+}
+
+.scroller {
+  overflow: hidden;
+}
+
+@media screen and (max-width: 499px) {
+  .parallax {
+    font-size: 140%;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .parallax {
+    font-size: 200%;
+  }
 }
 
 /* Text */
